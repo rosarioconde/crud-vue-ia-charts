@@ -5,6 +5,7 @@ import LoginView from '@/views/LoginView.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import PacientesView from '@/views/PacientesView.vue'
 import AdminView from '@/views/AdminView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes = [
   {
@@ -36,6 +37,12 @@ const routes = [
       requiresAuth: true,
       requiresAdmin: true
     }
+  },
+  // 👇 Agregamos esta nueva ruta al final
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundView
   }
 ]
 
